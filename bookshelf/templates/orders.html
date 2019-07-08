@@ -1,0 +1,36 @@
+<!doctype html>
+<style>
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+</style>
+<html>
+    <body>
+        <title>Orders</title>
+        <h1> Orders</h1>
+<table id="orders" style="width:100%"><tbody><tr>
+            <th>id</th>
+            <th>user</th>
+            <th>username</th>
+            <th>payment detail</th>
+            <th>address</th>
+            <th>date</th>
+            <th>total</th>
+            <th>status</th>
+        </tr><tr>
+            {% for row in result %}
+             <td>{{row['id']}}</td>
+            <td>{{row['userId']}}</td>
+            <td>{{row['userName']}}</td>
+            <td>{{row['paymentDetail']}}</td>
+            <td>{{row['address']}}</td>
+            <td>{{row['orderDate']}}</td>
+            <td>{{row['total']}}</td>
+            <td>{{row['status']}}</td>
+        </tr>
+        {% endfor %}
+    </tbody></table>
+    </body>
+</html>

@@ -1,0 +1,55 @@
+<!doctype html>
+<style>
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+</style>
+<html>
+    <body>
+        <title>Order Detail</title>
+        <h1> Order {{result['id']}}</h1>
+        <h3>Payment</h3>
+<table id="orders" style="width:100%"><tbody><tr>
+            <th>id</th>
+            <th>user</th>
+            <th>username</th>
+            <th>payment detail</th>
+            <th>shipping address country</th>
+            <th>date</th>
+            <th>total</th>
+            <th>status</th>
+        </tr><tr>
+             <td>{{result['id']}}</td>
+            <td>{{result['userId']}}</td>
+            <td>{{result['userName']}}</td>
+            <td>{{result['paymentDetail']}}</td>
+            <td>{{result['address']}}</td>
+            <td>{{result['orderDate']}}</td>
+            <td>{{result['total']}}</td>
+            <td>{{result['status']}}</td>
+        </tr>
+    </tbody></table>
+    <br>
+    <h3>Items</h3>
+<table id="items" style="width:100%"><tbody><tr>
+            <th>item id</th>
+            <th>name</th>
+            <th>quantity</th>
+            <th>price</th>
+            <th>description</th>
+            <th>total</th>
+        </tr><tr>
+            {% for row in result['items'] %}
+             <td>{{row['itemId']}}</td>
+             <td>{{row['name']}}</td>
+             <td>{{row['price']}}</td>
+             <td>{{row['quantity']}}</td>
+             <td>{{row['description']}}</td>
+             <td>{{row['total']}}</td>
+        </tr>
+        {% endfor %}
+    </tbody></table>
+    </body>
+</html>

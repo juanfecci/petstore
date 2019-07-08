@@ -1,0 +1,16 @@
+<HTML>
+<BODY>
+<H1> Add Items</H1> 
+<br>
+
+<form action="{{ url_for('example.added') }}" method = "POST">
+	Item ID: <input type = "text" name= "iid" />
+	Item Name: <input type = "text" name= "in" />
+	Item Price: <input type = "text" name= "ip" />
+	Quantity: <input type = "text" name= "q" />
+	Item Description: <input type = "text" name= "id" />
+    <input type="submit" value="Add Item" />
+</form>
+
+</BODY>
+</HTML>

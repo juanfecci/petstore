@@ -1,0 +1,27 @@
+<HTML>
+<BODY>
+<H1> Welcome to the example or the Order-Management</H1> 
+<br>
+
+<form action="{{ url_for('example.addItem') }}">
+    <input type="submit" value="Create Order" />
+</form>
+
+<br>
+<form action="{{ url_for('example.viewAll') }}">
+    <input type="submit" value="View All Orders" />
+</form>
+
+<br>
+<form method="POST" action="{{ url_for('example.view') }}">
+	User ID: <input type = "text" name= "uid" />
+    <input type="submit" value="View Orders from User" />
+</form>
+
+<br>
+<form method="POST" action="{{ url_for('example.order') }}">    
+    Order ID: <input type = "text" name= "oid" />
+    <input type = "submit" value="View Order">	
+</form>
+</BODY>
+</HTML>
